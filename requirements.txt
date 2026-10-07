@@ -1,0 +1,34 @@
+# RAQE runtime dependencies.
+#
+# Install PyTorch separately so the CUDA build matches your driver, e.g.
+#   pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+# then `pip install -r requirements.txt`.
+#
+# Pyserini additionally requires a JDK 21 with incubator modules; see
+# docs/ENVIRONMENT.md.
+
+# --- Training (Stage 1 SFT, Stage 2 offline GRPO) ---
+transformers>=4.46,<5
+peft>=0.14
+accelerate>=1.0
+datasets>=3.0
+trl>=0.12
+safetensors>=0.4
+
+# --- Retrieval and evaluation ---
+pyserini==1.2.0
+faiss-cpu>=1.8
+pytrec_eval>=0.5
+numpy>=1.24,<2
+
+# --- Dataset download (get_IR_dataset.py) ---
+beir>=2.0
+requests>=2.31
+
+# --- Utilities ---
+tqdm>=4.66
+python-dotenv>=1.0
+
+# --- Optional ---
+# wandb>=0.19          # `--wandb` logging in Stage 2
+# mxbai-rerank>=0.1    # only for the mxbai reranker ablation (Sec. 4.2)

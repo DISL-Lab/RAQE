@@ -1,0 +1,38 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+
+# Python and editor state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.vscode/
+.DS_Store
+hs_err_pid*.log
+*.log
+
+# Downloaded data and retrieval resources (also match bare symlinks, not just dirs)
+/datasets
+/indexes
+/artifacts
+datasets/
+indexes/
+artifacts/
+embedding_cache/
+cache/
+
+# Generated training/evaluation artifacts
+/outputs
+/dist
+outputs/
+sft/data/
+sft_outputs/
+grpo_output/
+grpo/**/grpo_output/
+evaluation/results/
+generation/results*/
+rebuttal/outputs/
+wandb/
+logs/
+
